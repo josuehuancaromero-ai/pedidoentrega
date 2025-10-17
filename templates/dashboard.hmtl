@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <p>Bienvenido a tu dashboard, {{ session['username'] }}!</p>
+
+    {% if session['role']=='admin' %}
+    <h2>Panel de Administración</h2>
+    <ul>
+        <li>Gestionar usuarios</li>
+        <li>Ver estadisticas del sistema</li>
+        <li>Configurar parámetros globales</li>
+    </u1>
+{% elif session['role'] =='editor' %}
+    <h2>Panel de Editor</h2>
+    <u1>
+        <li>Crear nuevo articulo</li>
+        <li>Editar articulos existentes</li>
+        <li>Moderar comentarios</li>
+    </ul>
+
+{% else %}
+    <h2>Panel de Usuario</h2>
+    <u1>
+        <li>Ver tus publicaciones</1i>
+        <1i>Actualizar perfil</li>
+        <li>Gestionar suscripciones</li>
+    </u1>
+    {% endif %)
+{% endblock %}
